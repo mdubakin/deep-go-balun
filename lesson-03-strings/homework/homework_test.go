@@ -36,12 +36,12 @@ func NewCOWBuffer(data []byte) COWBuffer {
 }
 
 func (b *COWBuffer) Clone() COWBuffer {
-	*(b.refs)++
+	*b.refs++
 	return *b
 }
 
 func (b *COWBuffer) Close() {
-	*(b.refs)--
+	*b.refs--
 }
 
 func (b *COWBuffer) Update(index int, value byte) bool {
@@ -49,10 +49,10 @@ func (b *COWBuffer) Update(index int, value byte) bool {
 		return false
 	}
 
-	if *(b.refs) > 1 {
+	if *b.refs > 1 {
 		newData := make([]byte, len(b.data))
 		copy(newData, b.data)
-		*(b.refs)--
+		b.Close()
 		*b = NewCOWBuffer(newData)
 	}
 
