@@ -274,3 +274,11 @@ type bmap struct {
 Разработчики Go решили добавить элемент случайности, чтобы программисты никогда не основывались на предположениях об упорядочивании hashmap.
 
 ## Дополнительные материалы
+
+1. [мапы в Go — уровень Pro](https://habr.com/ru/companies/avito/articles/774618/)
+
+2. (my top) [hashmap по версии Golang — часть 1](https://habr.com/ru/articles/704796/)
+
+3. (my top) [hashmap по версии Golang — часть 2](https://habr.com/ru/articles/717724/)
+
+4. [Go maps explained](https://victoriametrics.com/blog/go-map/)
